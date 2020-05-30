@@ -18,10 +18,9 @@ public class SpringIn5StepsApplication {
 		// Application Context
 		
 
-		//ApplicationContext applicationContext =
-				//SpringApplication.run(SpringIn5StepsApplication.class, args);
-		
-		BinarySearchImpl binarySearch = new BinarySearchImpl(new BubbleSortAlgorithm()); //applicationContext.getBean(BinarySearchImpl.class);
+		ApplicationContext applicationContext = SpringApplication.run(SpringIn5StepsApplication.class, args);
+		BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
+		//BinarySearchImpl binarySearch = new BinarySearchImpl(new BubbleSortAlgorithm()); //applicationContext.getBean(BinarySearchImpl.class);
 		int result = binarySearch.binarySearch(new int[] { 12, 4, 6 }, 3);
 		System.out.println("result= " + result);
 		
